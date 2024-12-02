@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple template</title>
+</head>
+<script>
+    let fact;
+    WebAssembly.instantiateStreaming(fetch("target/wasm32-unknown-unknown/release/wasm_demo.wasm"), {}).then(
+        (obj) => {
+            console.log(obj);
+            fact = (x) => obj.instance.exports.fact(BigInt(x))
+        },
+    );
+    function calc() {
+        document.getElementById("fact").innerText = fact(parseInt(document.getElementById("n").value)).toString();
+    }
+</script>
+
+<body>
+    <form>
+        <label for="n">Fattoriale di:</label>
+        <input type="number" id="n">
+        <button type="button" onclick="calc()">Calcola</button>
+    </form>
+    <p>Risultato: <span id="fact"></span></p>
+</body>
+
+</html>
