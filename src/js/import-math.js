@@ -1,5 +1,5 @@
 let fact;
-WebAssembly.instantiateStreaming(fetch("target/wasm32-unknown-unknown/release/wasm_demo.wasm"), {}).then(
+WebAssembly.instantiateStreaming(fetch("simple.wasm"), {}).then(
     (obj) => {
         console.log(obj);
         fact = (x) => obj.instance.exports.fact(BigInt(x))
