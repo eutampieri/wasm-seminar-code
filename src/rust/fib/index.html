@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple template</title>
+</head>
+<script>
+    let fib;
+    WebAssembly.instantiateStreaming(fetch("target/wasm32-unknown-unknown/release/fib.wasm"), {}).then(
+        (obj) => {
+            console.log(obj);
+            fib = (x) => obj.instance.exports.fib(x)
+        },
+    );
+    function calc() {
+        document.getElementById("fib").innerText = fib(parseInt(document.getElementById("n").value)).toString();
+    }
+</script>
+
+<body>
+    <form>
+        <label for="n">N-esimo numero di Fibonacci:</label>
+        <input type="number" id="n">
+        <button type="button" onclick="calc()">Calcola</button>
+    </form>
+    <p>Risultato: <span id="fib"></span></p>
+</body>
+
+</html>
