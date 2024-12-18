@@ -29,8 +29,16 @@ L'esercizio può essere realizzato in Rust o in AssemblyScript.
    };
    ```
    ```rust
-   fn answer() {
+   fn answer() -> u8 {
      42
+   }
+   ```
+   ```rust
+   fn answer_1(years: u8) -> u8 {
+     match years {
+       0 | 1 => 1,
+       _ => 42,
+     }
    }
    ```
 1. Utilizzare il [costrutto `match`](https://doc.rust-lang.org/book/ch06-02-match.html), [altri esempi](https://doc.rust-lang.org/rust-by-example/flow_control/match.html)
