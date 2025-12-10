@@ -51,3 +51,9 @@ L'esercizio può essere realizzato in Rust o in AssemblyScript.
    ```
 1. Utilizzare il [costrutto `match`](https://doc.rust-lang.org/book/ch06-02-match.html), [altri esempi](https://doc.rust-lang.org/rust-by-example/flow_control/match.html)
 
+## Integrazione con Vue
+
+Nella sottocartella `vue` si può trovare un esempio di integrazione con Vue.
+
+### Workflow:
+- Per compilare il codice Rust si usa `wasm-pack build --target web`
