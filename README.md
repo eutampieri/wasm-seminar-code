@@ -57,3 +57,4 @@ Nella sottocartella `vue` si può trovare un esempio di integrazione con Vue.
 
 ### Workflow:
 - Per compilare il codice Rust si usa `wasm-pack build --target web`
+- Copiare `hello_world/pkg/hello_world_bg.wasm` in `hello-vue/node_modules/.vite/deps/`

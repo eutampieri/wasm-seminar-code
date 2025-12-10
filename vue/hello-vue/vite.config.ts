@@ -10,11 +10,6 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  server: { // Otherwise WASM won't load
-    fs: {
-      allow: ['../hello_world/pkg', '.'],
-    },
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

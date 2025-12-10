@@ -15,7 +15,7 @@ const sum = computed(() => add(BigInt(left.value), BigInt(right.value)))
   <h1>{{ title }}</h1>
   <section>
     <label for="name">Your name:</label>
-    <input type="text" id="name"></input>
+    <input type="text" id="name" v-model="name"></input>
   </section>
   <h2>Math</h2>
   <section>
